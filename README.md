@@ -182,4 +182,111 @@ let  height  =  200;
 Alguns pontos sobre escopos:
 - Variaveis var são sempre globais pois ignoram os blocos.
 - Pode ser criada variaveis com o mesmo nome utilizando dos diferentes escopos globais e locais.
-- 
+
+## Data Types
+
+Como as variáveis possuem tipos distintos e possível visualizar o tipo específico com o operador **typeof** que pode retornar os possíveis outputs:
+
+```
+"undefined"
+
+"object"
+
+"boolean"
+
+"number"
+
+"bigint"
+
+"string"
+
+"symbol"
+
+"function"
+```
+
+Com esse operador é possível retornar no console o tipo de uma variável em especial:
+
+```
+let  year  =  1990;
+console.log(typeof  year);  //  ->  number
+console.log(typeof  1991);  //  ->  number
+   
+let  name  =  "Alice";
+console.log(typeof  name);  //  ->  string
+console.log(typeof  "Bob");  //  ->  string
+   
+let  typeOfYear  =  typeof  year;
+console.log(typeOfYear);  //  ->  number
+console.log(typeof  typeOfYear);  //  ->  string
+```
+
+### Primitive data types
+
+Em Javascript existem seis tipos de tipos de dados: Boolean, Number, BigInt, String, Symbol, and undefined. São valores atômicos não divisiveis.
+
+#### Boolean
+
+O Boolean é um tipo lógico de dado, que somente consegue receber dois valores: **true** or **false**. São frequentemente usados em condicionais de execução ou frequência de repetição.
+
+```
+let  isDataValid  =  true;
+let  isStringTooLong  =  false;
+let  isGameOver  =  false;
+continueLoop  =  true;
+   
+console.log(false);  //  ->  false
+console.log(typeof  false);  //  ->  boolean
+console.log(isDataValid);  //  ->  true
+console.log(typeof  isDataValid);  //  ->  boolean
+```
+
+#### Number
+
+É o principal tipo numérico em Javascript que representa ambos os números reais e inteiros. Esse tipo de dado aceita operações como adição, subtração, multiplicação e divisão. 
+
+```
+const  year  =  1991;
+let  delayInSeconds  =  0.00016;
+let  area  =  (16  *  3.14);
+let  halfArea  =  area  /  2;
+   
+console.log(year);  //  ->  1991;
+console.log(typeof  year);  //  ->  number;
+```
+
+O tipo number pode aceitar qualquer forma de acordo com o prefixo adicionado além decimal:
+
+```
+let  a  =  10;  //  decimal  -  default  
+let  b  =  0x10;  //  hexadecimal  
+let  c  =  0o10;  //  octal  
+let  d  =  0b10;  //  binary  
+   
+console.log(a);  //  ->  10  
+console.log(b);  //  ->  16  
+console.log(c);  //  ->  8  
+console.log(d);  //  ->  2  
+   
+let  x  =  9e3;
+let  y  =  123e-5;
+console.log(x);  //  ->  9000
+console.log(y);  //  ->  0.00123
+```
+
+Também aceitam valores especiais: **Infinity**, **-Infinity** e **NaN**
+
+```
+let  a  =  1  /  0;
+let  b  =  -Infinity;
+   
+console.log(a);  //  ->  Infinity
+console.log(b);  //  ->  -Infinity
+console.log(typeof  a);  //  ->  number
+console.log(typeof  b);  //  ->  number
+   
+let  s  =  "it's  definitely  not  a  number";
+let  n  =  s  *  10;
+console.log(n);  //  ->  NaN
+console.log(typeof  n);  //  ->  number
+```
