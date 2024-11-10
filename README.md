@@ -290,3 +290,35 @@ let  n  =  s  *  10;
 console.log(n);  //  ->  NaN
 console.log(typeof  n);  //  ->  number
 ```
+
+##### BigInt
+
+Os tipos BigInt são inteiros com uma grande capacidade que possibilitam operações mais complexas:
+
+```
+let  big  =  1234567890000000000000n;
+let  big2  =  1n;
+   
+console.log(big);  //  ->  1234567890000000000000n
+console.log(typeof  big);  //  ->  bigint
+   
+console.log(big2);  //  ->  1n
+console.log(7n  /  4n);  //  ->  1n
+```
+
+As operações com BigInt não podem utilizar outros tipos aritmeticos e resultam em erro: 
+
+```
+let  big3  =  1000n  +  20;  
+//  ->  Uncaught  TypeError:  Cannot  mix  BigInt  and  other  types,  use  explicit  conversions
+```
+
+Não aceitam valores **Infinity** e **NaN**: 
+
+```
+let  big4  =  1000n  /  0n;  //  ->  Uncaught  RangeError:  Division  by  zero
+```
+
+#### String
+
+As Strings são conjuntos de caracteres que formam um trecho de texto. Podem ser utilizados em diferentes opções como concatenação, extração de substring e verificação de tamanho de string. 
