@@ -322,3 +322,70 @@ let  big4  =  1000n  /  0n;  //  ->  Uncaught  RangeError:  Division  by  zero
 #### String
 
 As Strings são conjuntos de caracteres que formam um trecho de texto. Podem ser utilizados em diferentes opções como concatenação, extração de substring e verificação de tamanho de string. 
+
+```
+let  country  =  "Malawi";
+let  continent  =  'Africa';
+   
+console.log(country);  //  ->  Malawi
+console.log(typeof  country);  //  ->  string
+console.log(continent);  //  ->  Africa
+console.log(typeof  continent);  //  ->  string
+```
+
+```
+let  message1  =  "The  vessel  'Mars'  called  at  the  port.";
+let  message2  =  'Cyclone  "Cilida"  to  pass  close  to  Mauritius.';
+   
+console.log(message1);  //  ->  The  vessel  'Mars'  called  at  the  port.
+console.log(message2);  //  ->  Cyclone  "Cilida"  to  pass  close  to  Mauritius.
+```
+
+```
+let  message1  =  'The  vessel  \'Mars\'  called  at  the  port.';
+let  message2  =  "Cyclone  \"Cilida\"  to  pass  close  to  Mauritius.";
+   
+console.log(message1);  //  ->  The  vessel  'Mars'  called  at  the  port.
+console.log(message2);  //  ->  Cyclone  "Cilida"  to  pass  close  to  Mauritius.
+   
+let  path  =  "C:\\Windows";
+console.log(path);  //  ->  C:\Windows
+```
+
+No JavaScritpt uma operação entre strings que apresentem dígitos podem ser realizados, realizando a conversão para valores númericos.
+
+```
+let  path  =  "C:\\Windows"  -  "Windows";
+console.log(path);  //  ->  NaN
+   
+let  test  =  "100"  -  "10";
+console.log(test);  //  ->  90
+console.log(typeof  test);  //  ->  number
+```
+
+Exceto operações de adição que resultam somente em concatenação: 
+
+```
+let  path  =  "C:\\"  +  "Windows";
+console.log(path);  //  ->  C:\Windows
+   
+let  test  =  "100"  +  "10";
+console.log(test);  //  ->  10010
+console.log(typeof  test);  //  ->  string
+```
+
+Pode ser utilizada a interpolação de strings:
+
+```
+let  country  =  "Malawi";
+let  continent  =  "Africa";
+   
+let  sentence  =  `  ${country}  is  located  in  ${continent}.`;
+console.log(sentence);  //  ->  Malawi  is  located  in  Africa.
+```
+
+```
+console.time();
+console.log("test  console");  //  ->  test  console
+console.timeEnd();  //  ->  default:  0.108154296875  ms
+```
